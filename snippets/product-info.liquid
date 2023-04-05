@@ -1,0 +1,94 @@
+<div>
+    <div class="" style="border: solid 1px; margin-bottom: 2rem; max-width: 80rem;">
+
+        <div class="card_tittle_Section"
+            style="display: flex; background: 'wheat'; justify-content: space-between; border: 1px solid; padding: 3rem;">
+            <span>#id: {{ product.id }}</span>
+        </div>
+
+        <div class="card_tittle_Section"
+            style="display: flex; background: 'wheat'; justify-content: space-between; border: 1px solid; padding: 3rem;">
+        <span>Title: {{ product.title }}</span>
+
+        </div>
+
+
+
+        <div class="card_description" style="padding: 4rem;">
+            <h2>Description</h2>
+            <p>
+                {{ product.content }}
+            </p>
+        </div>
+
+        <div class="card_link"
+            style="display: flex; justify-content: space-between; padding-left: 3rem; padding-right: 3rem; border-top: 1px solid;">
+            <span>Product handle:</span>
+            <span>{{ product.handle }}</span>
+        </div>
+
+        <div class="card_list" style="border-top: 1px solid; border-bottom: 1px solid; padding-left: 3rem;">
+            <h2>
+                Product options
+            </h2>
+            <ul>
+                {% for item in product.options %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <h2 style="text-align: center;">Product variants</h2>
+        {% for item in product.variants %}
+        {% if item.available %}
+        <div class="" style="margin: 4rem; border: 1px solid;">
+            <div class="" style="display: flex; justify-content:space-between; border: 1px solid;">
+                <span>#id:{{ item.id }}</span>
+            </div>
+
+            <div class="" style="display: flex; justify-content:space-between; border: 1px solid;">
+                <span>Title: {{ item.title }}</span>
+            </div>
+
+            <h2 style="text-align: center;">{{ item.price | money }}</h2>
+            <div style="border-top: 1px solid; display: flex; justify-content:space-between; padding-left: 2rem;">
+                <span>SKU</span>
+                <span>{{ item.sku }}</span>
+            </div>
+
+
+        </div>
+
+        <div id="cartAdjustment" class="variant">
+            <div class="line-item-property__field">
+                <input type="text" name="property" id="size" placeholder="size" style="width: 20rem">
+            </div>
+            <button class="addToCart" data-id="{{ item.id }}">
+                <span class="material-symbols-outlined">
+                    add_circle
+                    </span>
+            </button>
+            <button class="remove" data-id="{{ item.id }}">
+                <span class="material-symbols-outlined">
+                    delete
+                    </span>
+            </button>
+            <button class="addProp" data-id="{{ item.id }}">prop 
+                <span class="material-symbols-outlined">
+                    add_circle
+                    </span>
+            </button>
+            <button class="cartAttribute" data-id="{{ item.id }}">
+                <span class="material-symbols-outlined">
+                    shopping_basket
+                    </span>
+            </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <div id="option-container">
+        </div>
+    </div>
+</div>
+<script src="{{ 'cart-crud.js' | asset_url}}"></script>

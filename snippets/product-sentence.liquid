@@ -1,0 +1,31 @@
+<div style="text-align: center;">
+        <table>
+            <thead>
+                <th>full sentence </th>
+                <th>half</th>
+            </thead>
+            <tbody>
+                {% for item in product.metafields.custom.strings.value %}
+                    <td>
+                        {{ item }}
+                    </td>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Colors</caption>
+            <thead>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </thead>
+            <tbody>
+                {% for item in product.metafields.global.color.value %}
+                    <td>
+                        {{ item }}
+                    </td>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
