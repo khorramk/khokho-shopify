@@ -1,0 +1,20 @@
+{
+  "name": "theme_export__khorrams-playground-myshopify-com-dawn-development__04apr2023-0319pm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khorramk/khokho-shopify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khorramk/khokho-shopify/issues"
+  },
+  "homepage": "https://github.com/khorramk/khokho-shopify#readme"
+}
